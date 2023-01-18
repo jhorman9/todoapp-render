@@ -10,6 +10,7 @@ const db = new Sequelize({
     password: process.env.DB_PASSWORD,
     dialect: "postgres", //la base de datos que estamos usando
     logging: false, //para que no nos de toda la informacion en la consola y nos llene la consola
+    dialectOptions: { ssl: { require: true, rejectUnauthorized: false }},
 });
 
 module.exports = db;
